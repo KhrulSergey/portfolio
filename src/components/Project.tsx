@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import '../assets/styles/Project.scss';
 import ProjectData from '../model/ProjectData';
 import ProjectService from '../service/ProjectService';
