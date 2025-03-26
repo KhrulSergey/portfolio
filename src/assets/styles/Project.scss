@@ -1,0 +1,117 @@
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  text-align: left;
+}
+
+.projects-container .search-grid{
+  margin-bottom: 20px;
+}
+
+.projects-container .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.projects-container .projects-grid .project {
+  text-align: left;
+  position: relative;
+}
+
+.project h2 {
+  font-size: medium;
+}
+
+.project h2:hover {
+  text-decoration: underline;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.zoom {
+  border-radius: 5px;
+  transition: transform .2s;
+  margin: 0 auto;
+  display: block;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+.project-description {
+  font-size: 0.9rem;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #7fa4d0;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.8s; /* Changed transition duration */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30%;
+  width: 30vw;
+  max-height: 300px;
+  overflow-y: auto;
+  pointer-events: none; /* Add this line */
+}
+
+.image-container:hover .tooltip {
+  opacity: 0.9;
+  pointer-events: auto; /* Add this line */
+}
+
+.tooltip h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.tooltip ul {
+  padding-left: 20px;
+}
+
+.tooltip .inline {
+  display: inline;
+  font-weight: normal;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.tooltip li {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+@media screen {
+    @media (max-width: 1000px) { /* Adjusted breakpoint */
+        .projects-container .projects-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        }
+    }
+    @media (max-width: 700px) {
+        .projects-container {
+            display: block;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .projects-container .projects-grid {
+            display: block; /* 1 column on small screens */
+        }
+
+        .projects-container .projects-grid .project {
+            padding-bottom: 5%;
+        }
+    }
+}
