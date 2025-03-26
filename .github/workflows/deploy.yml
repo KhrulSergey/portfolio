@@ -28,6 +28,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: KhrulSergey/khrulsergey.github.io
+          publish_branch: main
           publish_dir: ./build
+          commit_message: ${{ github.event.head_commit.message }}
+          user_name: KhrulSergey
+          user_email: KhrulSergey@github.com
